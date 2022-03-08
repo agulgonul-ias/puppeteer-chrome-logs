@@ -1,0 +1,23 @@
+{
+  "name": "puppeteer-chrome-logs",
+  "version": "1.0.0",
+  "description": "**PUPPETEER**",
+  "main": "index.js",
+  "scripts": {
+    "test": "node test2.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/agulgonul-ias/puppeteer-chrome-logs.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/agulgonul-ias/puppeteer-chrome-logs/issues"
+  },
+  "homepage": "https://github.com/agulgonul-ias/puppeteer-chrome-logs#readme",
+  "dependencies": {
+    "puppeteer": "^13.5.0"
+  }
+}
