@@ -2,9 +2,10 @@ const puppeteer = require('puppeteer');
 const fs = require("fs");
 
 
+
 let config = {
 	launchOptions: {
-		headless:true
+		headless:false
 	}
 }
 
@@ -27,13 +28,13 @@ puppeteer.launch(config.launchOptions).then(async browser => {
 	console.log(getOwnPropertiesAsText);
 	console.log(getGlobalObjectAsText);
 
+	//todo change the config.launchOption.headless to false or true
 	if (config.launchOptions.headless){
-		writeToFile('chrome-headless-getOwnProperties.txt', getOwnPropertiesAsText);
-		writeToFile('chrome-headless-getGlobalObjects.txt',getGlobalObjectAsText);
+		writeToFile('puppeteer-chrome-headless-getOwnProperties.txt', getOwnPropertiesAsText);
+		writeToFile('puppeteer-chrome-headless-getGlobalObjects.txt',getGlobalObjectAsText);
 	}else{
 		writeToFile('chrome-getOwnProperties.txt', getOwnPropertiesAsText);
 		writeToFile('chrome-getGlobalObjects.txt',getGlobalObjectAsText);
-
 	}
 
 });

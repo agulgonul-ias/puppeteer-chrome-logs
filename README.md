@@ -1,7 +1,11 @@
 # puppeteer-chrome-logs
-**PUPPETEER**
+This repo is created to collect the unique logs which that already created on index.html file
+
+* document.write(Object.getOwnPropertyNames(window));
+* document.write(Object.keys(window));
 
 
+# puppeteer is:
 * js based tool
 * works with node.js
 * need to have node.js and NPM
@@ -9,14 +13,22 @@
 * npm -v
 * node -v
 
+Puppeteer is a Node library and it provides APIs to control Chrome or Chromium
+over the DevTools Protocol. Puppeteer on default runs headless, but it can be configured
+to run in non-headless full mode at Chrome or Chromium.
 
 
-**FW Setup:**
-1. create a file on documents named MyPuppeteer
-2. and run the command on the console npm init -y to create package.json
-   package.json is the controller like build (or maven pom.xml)
+## FW Setup:
+* Create a file on Finder/documents named MyPuppeteer
+* And run the command on the console 
+npm init -y 
+* to create package.json
+   package.json 
+* thes file is the controller like build (or maven pom.xml)
 
-file is created:
+Make sure the file is created as below:
+
+```json
 `{
 "name": "mypuppeteer",
 "version": "1.0.0",
@@ -29,49 +41,55 @@ file is created:
 "author": "",
 "license": "ISC"
 }`
+```
 
-
-3. install puppeteer by:
+1. install puppeteer by:
    `npm install --save puppeteer
    `
 
 
-4. Add the script to run the browser
+2. Add the script to run the browser
    headless: true/false
+```json
    `const puppeteer = require('puppeteer');`
    `let config = {
    launchOPtions: {
    headless:false`
    `	}`
    `}`
+```
+example test for navigating to google page
+```json
+  puppeteer.launch(config.launchOPtions).then(async browser => {
+      const page = await browser.newPage();
+      await page.goto('https://gmail.com');
+      await browser.close();
+  });`
+```
+3. edit the runner on the package.json file on the same folder by changing the Script.
 
-`puppeteer.launch(config.launchOPtions).then(async browser => {
-const page = await browser.newPage();
-await page.goto('https://gmail.com');
-await browser.close();
-});`
+   `"test": "echo \"Error: no test specified\" && exit 1"`
 
-5. edit the runner on the package.json file on the same folder by changing the Script.
-   `"test": "echo \"Error: no test specified\" && exit 1"
-   `with
-   `"node test.js"
-   `
+   with
 
-5.1 NOTE: edit package.json file to change the test runs:
-`"scripts": {
-"test": "node test2.js"
-},`
+   `"node test.js"`
 
-just changed the script test like in cucumber to ask to run specific file
+3.1 NOTE: edit package.json file to change the test runs:
+```json
+  "scripts": {
+  "test": "node test2.js"
+  },
+```
+just changed the script test like in cucumber & command to run specific file (ex:node test2.js)
 
-DONT FORGET TO SAVE THE EDITED FILES &
+
+SAVE THE EDITED FILES &
 
 DONE!!!
 
 
-
 ============================
 
-imp note: Puppeteer only accepts #css locators.
+NOTE: Puppeteer only accepts #css locators.
 
 
